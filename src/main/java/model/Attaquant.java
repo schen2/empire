@@ -43,7 +43,7 @@ public class Attaquant extends Unite implements UniteLibre {
 		
 		/**
 		 * Set a value to attribute vitesse.
-		 * @param vitesse.
+		 * @param vitesse
 		 */
 		public void setVitesse(int vitesse) {
 		    this.vitesse = vitesse;

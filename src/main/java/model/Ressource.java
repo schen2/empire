@@ -44,7 +44,7 @@ public class Ressource extends Obstacle {
 		
 		/**
 		 * Set a value to attribute quantite.
-		 * @param quantite.
+		 * @param quantite
 		 */
 		public void setQuantite(Object quantite) {
 		    this.quantite = quantite;
@@ -60,7 +60,7 @@ public class Ressource extends Obstacle {
 		
 		/**
 		 * Set a value to attribute typeRessource.
-		 * @param typeRessource.
+		 * @param typeRessource
 		 */
 		public void setTypeRessource(TypeRessource typeRessource) {
 		    this.typeRessource = typeRessource;

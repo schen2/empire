@@ -47,7 +47,7 @@ public class Carte {
 		
 		/**
 		 * Set a value to attribute hauteur.
-		 * @param hauteur.
+		 * @param hauteur
 		 */
 		public void setHauteur(int hauteur) {
 		    this.hauteur = hauteur;
@@ -63,7 +63,7 @@ public class Carte {
 		
 		/**
 		 * Set a value to attribute largeur.
-		 * @param largeur.
+		 * @param largeur
 		 */
 		public void setLargeur(int largeur) {
 		    this.largeur = largeur;
@@ -79,7 +79,7 @@ public class Carte {
 		
 		/**
 		 * Set a value to attribute cases.
-		 * @param cases.
+		 * @param cases
 		 */
 		public void setCases(HashSet<Case> cases) {
 		    this.cases = cases;
@@ -111,7 +111,7 @@ public class Carte {
 		
 		/**
 		 * Set a value to attribute aretes.
-		 * @param aretes.
+		 * @param aretes
 		 */
 		public void setAretes(HashSet<Arete> aretes) {
 		    this.aretes = aretes;

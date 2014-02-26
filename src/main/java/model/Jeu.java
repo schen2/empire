@@ -45,7 +45,7 @@ public class Jeu {
 		
 		/**
 		 * Set a value to attribute bases.
-		 * @param bases.
+		 * @param bases
 		 */
 		public void setBases(HashSet<Base> bases) {
 		    this.bases = bases;
@@ -77,7 +77,7 @@ public class Jeu {
 		
 		/**
 		 * Set a value to attribute carte.
-		 * @param carte.
+		 * @param carte
 		 */
 		public void setCarte(Carte carte) {
 		    this.carte = carte;

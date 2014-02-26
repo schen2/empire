@@ -43,7 +43,7 @@ public class CaseObstacle extends Case {
 		
 		/**
 		 * Set a value to attribute obstacle.
-		 * @param obstacle.
+		 * @param obstacle
 		 */
 		public void setObstacle(Obstacle obstacle) {
 		    this.obstacle = obstacle;

@@ -44,7 +44,7 @@ public class CaseLibre extends Case {
 		
 		/**
 		 * Set a value to attribute unites.
-		 * @param unites.
+		 * @param unites
 		 */
 		public void setUnites(HashSet<UniteLibre> unites) {
 		    this.unites = unites;

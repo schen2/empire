@@ -48,7 +48,7 @@ public class Recolteur extends Unite implements UniteLibre {
 		
 		/**
 		 * Set a value to attribute capaciteTotal.
-		 * @param capaciteTotal.
+		 * @param capaciteTotal
 		 */
 		public void setCapaciteTotal(int capaciteTotal) {
 		    this.capaciteTotal = capaciteTotal;
@@ -64,7 +64,7 @@ public class Recolteur extends Unite implements UniteLibre {
 		
 		/**
 		 * Set a value to attribute vitesseDeplacement.
-		 * @param vitesseDeplacement.
+		 * @param vitesseDeplacement
 		 */
 		public void setVitesseDeplacement(int vitesseDeplacement) {
 		    this.vitesseDeplacement = vitesseDeplacement;
@@ -80,7 +80,7 @@ public class Recolteur extends Unite implements UniteLibre {
 		
 		/**
 		 * Set a value to attribute vitesseRecolte.
-		 * @param vitesseRecolte.
+		 * @param vitesseRecolte
 		 */
 		public void setVitesseRecolte(int vitesseRecolte) {
 		    this.vitesseRecolte = vitesseRecolte;
@@ -96,7 +96,7 @@ public class Recolteur extends Unite implements UniteLibre {
 		
 		/**
 		 * Set a value to attribute bois.
-		 * @param bois.
+		 * @param bois
 		 */
 		public void setBois(int bois) {
 		    this.bois = bois;
@@ -112,7 +112,7 @@ public class Recolteur extends Unite implements UniteLibre {
 		
 		/**
 		 * Set a value to attribute nourriture.
-		 * @param nourriture.
+		 * @param nourriture
 		 */
 		public void setNourriture(int nourriture) {
 		    this.nourriture = nourriture;
@@ -128,7 +128,7 @@ public class Recolteur extends Unite implements UniteLibre {
 		
 		/**
 		 * Set a value to attribute porteeRecolte.
-		 * @param porteeRecolte.
+		 * @param porteeRecolte
 		 */
 		public void setPorteeRecolte(double porteeRecolte) {
 		    this.porteeRecolte = porteeRecolte;

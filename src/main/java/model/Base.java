@@ -48,7 +48,7 @@ public class Base extends Obstacle {
 		
 		/**
 		 * Set a value to attribute bois.
-		 * @param bois.
+		 * @param bois
 		 */
 		public void setBois(int bois) {
 		    this.bois = bois;
@@ -64,7 +64,7 @@ public class Base extends Obstacle {
 		
 		/**
 		 * Set a value to attribute nourriture.
-		 * @param nourriture.
+		 * @param nourriture
 		 */
 		public void setNourriture(int nourriture) {
 		    this.nourriture = nourriture;
@@ -80,7 +80,7 @@ public class Base extends Obstacle {
 		
 		/**
 		 * Set a value to attribute pv.
-		 * @param pv.
+		 * @param pv
 		 */
 		public void setPv(int pv) {
 		    this.pv = pv;
@@ -96,7 +96,7 @@ public class Base extends Obstacle {
 		
 		/**
 		 * Set a value to attribute unites.
-		 * @param unites.
+		 * @param unites
 		 */
 		public void setUnites(HashSet<Unite> unites) {
 		    this.unites = unites;
@@ -128,7 +128,7 @@ public class Base extends Obstacle {
 		
 		/**
 		 * Set a value to attribute nom.
-		 * @param nom.
+		 * @param nom
 		 */
 		public void setNom(String nom) {
 		    this.nom = nom;
