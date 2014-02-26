@@ -19,7 +19,7 @@ import model.environment.Case;
  *
  */
 
-public class Defenseur extends Unite {
+public class Defenseur extends Unite implements IAgent {
 		
 		// Start of user code to add fields for Defenseur
 		 
@@ -33,10 +33,17 @@ public class Defenseur extends Unite {
             super(pv, pt, pa, t, va, po, c);
             // End of user code
         }
-		
-		
-		
-		// Start of user code to add methods for Defenseur
+
+        /**
+         * Description of the method reagir.
+         */
+        @Override
+        public void reagir() {
+
+        }
+
+
+    // Start of user code to add methods for Defenseur
 		
 		// End of user code
 }

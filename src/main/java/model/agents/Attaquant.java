@@ -20,7 +20,7 @@ import model.environment.CaseLibre;
  *
  */
 
-public class Attaquant extends Unite implements UniteLibre {
+public class Attaquant extends Unite implements UniteLibre, IAgent {
 		private int vitesse;
 		
 		// Start of user code to add fields for Attaquant

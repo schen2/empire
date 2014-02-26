@@ -21,7 +21,7 @@ import java.util.HashSet;
  *
  */
 
-public class Base extends Obstacle {
+public class Base extends Obstacle implements IAgent  {
 		private int bois;
 		private int nourriture;
 		private int pv;
@@ -171,8 +171,16 @@ public class Base extends Obstacle {
 
 			// End of user code
 		}
-		
-		// Start of user code to add methods for Base
+
+        /**
+         * Description of the method reagir.
+         */
+        @Override
+        public void reagir() {
+
+        }
+
+        // Start of user code to add methods for Base
 		
 		// End of user code
 }

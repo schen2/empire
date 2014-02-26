@@ -21,7 +21,7 @@ import model.environment.Ressource;
  *
  */
 
-public class Recolteur extends Unite implements UniteLibre {
+public class Recolteur extends Unite implements UniteLibre, IAgent {
 		private int capaciteTotal;
 		private int vitesseDeplacement;
 		private int vitesseRecolte;

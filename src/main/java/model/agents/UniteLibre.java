@@ -49,12 +49,7 @@ public interface UniteLibre {
      */
     public void suivreUnite(UniteLibre cible);
 
-    /**
-     *  Description of the method reagir.
-     *
-     *
-     */
-    public void reagir();
+
 
 	// Start of user code to add methods for UniteLibre
  
