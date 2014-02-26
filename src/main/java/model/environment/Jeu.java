@@ -11,7 +11,8 @@ package model.environment;
  
 import model.agents.Base;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+
 
 // End of user code
 
@@ -21,9 +22,12 @@ import java.util.HashSet;
  */
 
 public class Jeu {
-		private HashSet<Base> bases;
+		private ArrayList<Base> bases;
+        private ArrayList<Base> playedBases;
 		private Carte carte;
-		
+        private Base baseCourante;
+        private double t;
+
 		// Start of user code to add fields for Jeu
 		 
 		// End of user code
@@ -34,6 +38,7 @@ public class Jeu {
 		public Jeu() {
 			// Start of user code for constructor Jeu
 			super();
+            t = 0;
 			// End of user code
 		}
 		
@@ -41,7 +46,7 @@ public class Jeu {
 		 * Return bases.
 		 * @return bases
 		 */
-		public HashSet<Base> getBases() {
+		public ArrayList<Base> getBases() {
 		    return bases;
 		}
 		
@@ -49,7 +54,7 @@ public class Jeu {
 		 * Set a value to attribute bases.
 		 * @param bases
 		 */
-		public void setBases(HashSet<Base> bases) {
+		public void setBases(ArrayList<Base> bases) {
 		    this.bases = bases;
 		}
 		
@@ -92,7 +97,7 @@ public class Jeu {
 		 */
 		public void avancerTemps() {
 			// Start of user code for method avancerTemps
-
+            t++;
 			// End of user code
 		}
 
@@ -103,7 +108,10 @@ public class Jeu {
 		 */
 		public void jouer(Base baseCourante) {
 			// Start of user code for method jouer
+            Base b = getBaseCourante();
 
+            baseCourante.jouer();
+            changerBaseCourante();
 			// End of user code
 		}
 
@@ -116,6 +124,12 @@ public class Jeu {
 			// Start of user code for method fini
 
 			boolean ret = false;
+            ret = playedBases.size() == 0;
+
+            for(Base b : bases) {
+                if (b.getPv() == 0)
+                    ret = true;
+            }
 
 			return ret;
 			// End of user code
@@ -128,10 +142,7 @@ public class Jeu {
 		 */
 		public Base getBaseCourante() {
 			// Start of user code for method getBaseCourante
-
-			Base ret = null;
-
-			return ret;
+			return baseCourante;
 			// End of user code
 		}
 
@@ -141,9 +152,23 @@ public class Jeu {
 		 */
 		public void changerBaseCourante() {
 			// Start of user code for method changerBaseCourante
+            playedBases.remove(baseCourante);
 
+            int n = playedBases.size();
+            int number = (int)(Math.random()*n);
+            baseCourante = playedBases.get(number);
 			// End of user code
 		}
+
+        /**
+         * Description of the method changerBaseCourante.
+         *
+         */
+        public void initTour() {
+            // Start of user code for method changerBaseCourante
+            playedBases = bases;
+            // End of user code
+        }
 		
 		// Start of user code to add methods for Jeu
 		
