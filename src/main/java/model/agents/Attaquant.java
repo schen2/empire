@@ -12,6 +12,7 @@ package model.agents;
 
 // End of user code
 
+import model.environment.Case;
 import model.environment.CaseLibre;
 
 /**
@@ -29,11 +30,12 @@ public class Attaquant extends Unite implements UniteLibre {
 		/**
 		 * Constructor.
 		 */
-		public Attaquant() {
-			// Start of user code for constructor Attaquant
-			super();
-			// End of user code
-		}
+        public Attaquant(int pv, int pt, int pa, int t, int va, double po, Case c, int v) {
+        // Start of user code for constructor Unite
+        super(pv, pt, pa, t, va, po, c);
+        this.vitesse = v;
+        // End of user code
+        }
 		
 		/**
 		 * Return vitesse.

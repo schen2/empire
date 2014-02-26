@@ -12,6 +12,8 @@ package model.agents;
 
 // End of user code
 
+import model.environment.Case;
+
 /**
  * Description of the class Defenseur.
  *
@@ -26,11 +28,11 @@ public class Defenseur extends Unite {
 		/**
 		 * Constructor.
 		 */
-		public Defenseur() {
-			// Start of user code for constructor Defenseur
-			super();
-			// End of user code
-		}
+        public Defenseur(int pv, int pt, int pa, int t, int va, double po, Case c) {
+            // Start of user code for constructor Unite
+            super(pv, pt, pa, t, va, po, c);
+            // End of user code
+        }
 		
 		
 		

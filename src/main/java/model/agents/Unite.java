@@ -12,6 +12,8 @@ package model.agents;
 
 // End of user code
 
+import model.environment.Case;
+
 /**
  * Description of the class Unite.
  *
@@ -26,15 +28,22 @@ public class Unite {
 		protected double porteeVision;
 		
 		// Start of user code to add fields for Unite
-		 
+		protected Case c;
 		// End of user code
 		
 		/**
 		 * Constructor.
 		 */
-		public Unite() {
+		public Unite(int pv, int pt, int pa, int t, int va, double po, Case c) {
 			// Start of user code for constructor Unite
 			super();
+            this.pvRestant = pv;
+            this.pointAttaque = pt;
+            this.porteeAttaque = pa;
+            this.taille = t;
+            this.vitesseAttaque = va;
+            this.porteeVision = po;
+            this.c = c;
 			// End of user code
 		}
 		

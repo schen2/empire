@@ -12,6 +12,7 @@ package model.agents;
 
 // End of user code
 
+import model.environment.Case;
 import model.environment.CaseLibre;
 import model.environment.Ressource;
 
@@ -35,11 +36,16 @@ public class Recolteur extends Unite implements UniteLibre {
 		/**
 		 * Constructor.
 		 */
-		public Recolteur() {
-			// Start of user code for constructor Recolteur
-			super();
-			// End of user code
-		}
+        public Recolteur(int pv, int pt, int pa, int t, int va, double po, Case c,
+                         int capa, int vitD, int vitR, double poR) {
+            // Start of user code for constructor Unite
+            super(pv, pt, pa, t, va, po, c);
+            this.capaciteTotal = capa;
+            this.vitesseDeplacement = vitD;
+            this.vitesseRecolte = vitR;
+            this.porteeRecolte = poR;
+            // End of user code
+        }
 		
 		/**
 		 * Return capaciteTotal.
