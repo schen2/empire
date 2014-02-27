@@ -18,8 +18,8 @@ package model.environment;
  */
 
 public class Position {
-		private int posX;
-		private int posY;
+		final int posX;
+		final int posY;
 		
 		// Start of user code to add fields for Position
 		 
@@ -28,9 +28,11 @@ public class Position {
 		/**
 		 * Constructor.
 		 */
-		public Position() {
+		public Position(int x, int y) {
 			// Start of user code for constructor Position
 			super();
+            this.posX = x;
+            this.posY = y;
 			// End of user code
 		}
 		
@@ -41,14 +43,7 @@ public class Position {
 		public int getPosX() {
 		    return posX;
 		}
-		
-		/**
-		 * Set a value to attribute posX.
-		 * @param posX
-		 */
-		public void setPosX(int posX) {
-		    this.posX = posX;
-		}
+
 		
 		/**
 		 * Return posY.
@@ -57,14 +52,7 @@ public class Position {
 		public int getPosY() {
 		    return posY;
 		}
-		
-		/**
-		 * Set a value to attribute posY.
-		 * @param posY
-		 */
-		public void setPosY(int posY) {
-		    this.posY = posY;
-		}
+
 		
 		
 		

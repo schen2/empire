@@ -9,7 +9,9 @@ package model.environment;
 
 // Start of user code to add imports for Carte
  
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 // End of user code
 
@@ -21,9 +23,11 @@ import java.util.HashSet;
 public class Carte {
 		private int hauteur;
 		private int largeur;
-		private HashSet<Case> cases;
-		private HashSet<Arete> aretes;
-		
+        private HashSet<Position> positions;
+        private Map map = new HashMap();
+		// private HashSet<Case> cases;
+		// private HashSet<Arete> aretes;
+
 		// Start of user code to add fields for Carte
 		 
 		// End of user code
@@ -34,6 +38,17 @@ public class Carte {
 		public Carte() {
 			// Start of user code for constructor Carte
 			super();
+            hauteur = 10;
+            largeur = 10;
+            map = new HashMap();
+            positions = new HashSet<Position>();
+            for(int i=0; i<largeur; ++i)
+                for(int j=0; j<hauteur; ++j) {
+                    Position p = new Position(i,j);
+                    positions.add(p);
+                    Case c = new Case();
+                    map.put(p,c);
+                }
 			// End of user code
 		}
 		
@@ -44,15 +59,7 @@ public class Carte {
 		public int getHauteur() {
 		    return hauteur;
 		}
-		
-		/**
-		 * Set a value to attribute hauteur.
-		 * @param hauteur
-		 */
-		public void setHauteur(int hauteur) {
-		    this.hauteur = hauteur;
-		}
-		
+
 		/**
 		 * Return largeur.
 		 * @return largeur
@@ -60,78 +67,7 @@ public class Carte {
 		public int getLargeur() {
 		    return largeur;
 		}
-		
-		/**
-		 * Set a value to attribute largeur.
-		 * @param largeur
-		 */
-		public void setLargeur(int largeur) {
-		    this.largeur = largeur;
-		}
-		
-		/**
-		 * Return cases.
-		 * @return cases
-		 */
-		public HashSet<Case> getCases() {
-		    return cases;
-		}
-		
-		/**
-		 * Set a value to attribute cases.
-		 * @param cases
-		 */
-		public void setCases(HashSet<Case> cases) {
-		    this.cases = cases;
-		}
-		
-		/**
-		 * Add a cases to the cases collection.
-		 * @param cases_elt Element to add.
-		 */
-		public void addCases(Case cases_elt) {
-		    this.cases.add(cases_elt);
-		}
-		
-		/**
-		 * Remove a cases to the cases collection.
-		 * @param cases_elt Element to remove
-		 */
-		public void removeCases(Case cases_elt) {
-		    this.cases.remove(cases_elt);
-		}
-		
-		/**
-		 * Return aretes.
-		 * @return aretes
-		 */
-		public HashSet<Arete> getAretes() {
-		    return aretes;
-		}
-		
-		/**
-		 * Set a value to attribute aretes.
-		 * @param aretes
-		 */
-		public void setAretes(HashSet<Arete> aretes) {
-		    this.aretes = aretes;
-		}
-		
-		/**
-		 * Add a aretes to the aretes collection.
-		 * @param aretes_elt Element to add.
-		 */
-		public void addAretes(Arete aretes_elt) {
-		    this.aretes.add(aretes_elt);
-		}
-		
-		/**
-		 * Remove a aretes to the aretes collection.
-		 * @param aretes_elt Element to remove
-		 */
-		public void removeAretes(Arete aretes_elt) {
-		    this.aretes.remove(aretes_elt);
-		}
+
 		
 		
 		
