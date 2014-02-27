@@ -13,6 +13,6 @@ package environment;
  */
 
 public enum TypeRessource {
-	BOIS,
-	NOURRITURE
+    BOIS,
+    NOURRITURE
 }

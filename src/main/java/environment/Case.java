@@ -8,7 +8,7 @@
 package environment;
 
 // Start of user code to add imports for Case
- 
+
 
 // End of user code
 
@@ -24,6 +24,8 @@ import java.util.HashSet;
 public class Case {
 
     // Start of user code to add fields for Case
+    final private int capacite = 1;
+    private Ressource ressource;
     private boolean obstacle;
     private boolean libre;
     private HashSet<Unite> unites;
@@ -35,16 +37,32 @@ public class Case {
     public Case() {
         // Start of user code for constructor Case
         super();
-        unites =
+        unites = new HashSet<Unite>();
         // End of user code
     }
 
     public boolean estLibre() {
-        return true;
+        return ressource != null && unites.size() < capacite;
     }
 
     public boolean estObstacle() {
-        return true;
+        return ressource == null;
+    }
+
+    public void ajouterUnite(Unite unite) {
+        unites.add(unite);
+    }
+
+    public void retirerUnite(Unite unite) {
+        unites.remove(unite);
+    }
+
+    public boolean contientUnite(Unite unite) {
+        return unites.contains(unite);
+    }
+
+    public int compte() {
+        return unites.size();
     }
 
 
