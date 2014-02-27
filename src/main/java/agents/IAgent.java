@@ -1,4 +1,4 @@
-package model.agents;
+package agents;
 
 /**
  * Created by sylvainchen on 26/02/14.
