@@ -25,14 +25,14 @@ import java.util.List;
 *
 */
 
-public class Base extends Agent  {
+public class Base<T> extends Agent  {
     private int bois;
     private int nourriture;
     private int pv;
     private HashSet<Unite> unites;
     private String nom;
     private Carte carte;
-
+    private T index;
 
     // Start of user code to add fields for Base
 
@@ -99,13 +99,14 @@ public class Base extends Agent  {
     /**
      * Constructor.
      */
-    public Base(int bois, int nourriture, int pv, String nom, Carte c) {
+    public Base(int bois, int nourriture, int pv, String nom, Carte c, final T index) {
         // Start of user code for constructor Base
         super(pv);
         this.bois = bois;
         this.nourriture = nourriture;
         this.nom = nom;
         this.carte = c;
+        this.index = index;
         // End of user code
     }
 
@@ -140,6 +141,15 @@ public class Base extends Agent  {
     public void setNourriture(int nourriture) {
         this.nourriture = nourriture;
     }
+
+    /**
+     * Return pv.
+     * @return pv
+     */
+    public T getIndex() {
+        return index;
+    }
+
 
     /**
      * Return pv.
@@ -256,46 +266,20 @@ public class Base extends Agent  {
      */
     @Override
     public void reagir() {
-
-
         final int width = carte.getLargeur();
         final int height = carte.getHauteur();
         final AEtoile<Point> astart = new AEtoile<Point>(successorComputer, fabriqueNoeud);
         final List<Point> result = astart.compute(new Point(0,0), new Point(width-1,height-1));
+
+        result.get(0);
+
+
+
         //On intégre le résultat dans la matrice de base, et on l'affiche
         String [][] matrix = new String[height][width];
         for(final Point point : result) {
-            System.out.println((int) point.getX());
-            System.out.println((int) point.getY());
             matrix[(int) point.getY()][(int) point.getX()] = "XXXX";
         }
-        displayMatrix(matrix);
-    }
-
-    /**
-     * Affiche la matrice dans la sortie standard
-     *
-     * @param matrix la matrice a afficher
-     */
-    public static void displayMatrix(final String[][] matrix) {
-        final StringBuilder result = new StringBuilder();
-        for (int col = 0; col < matrix[0].length; ++col) {
-            result.append("___");
-        }
-        result.append('\n');
-        for (int line = 0; line < matrix.length; ++line) {
-            for (int col = 0; col < matrix[line].length; ++col) {
-                result.append(' ');
-                result.append(matrix[line][col]);
-                result.append(' ');
-            }
-
-            result.append('\n');
-        }
-        for (int col = 0; col < matrix[0].length; ++col) {
-            result.append("___");
-        }
-        System.out.println(result);
     }
 
     // Start of user code to add methods for Base

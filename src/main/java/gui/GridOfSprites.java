@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,8 +31,7 @@ public class GridOfSprites extends JFrame implements ActionListener{
     int boxSize = 20,
     width = 0,
     height = 0;
-    private Base b;
-    private Base b2;
+    private ArrayList<Base<Point>> bases = new ArrayList<Base<Point>>();
     private Carte c;
     final String[][] matrix = new String[][] {
             { " ","|"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," " },
@@ -54,11 +53,16 @@ public class GridOfSprites extends JFrame implements ActionListener{
 
     public GridOfSprites() {
         Carte carte = new Carte(matrix);
-        Base b = new Base(300,300,300,"Base1", c);
-        Base b2 = new Base(300,300,300,"Base2", c);
+        int largeur = carte.getLargeur();
+        int hauteur = carte.getHauteur();
+        width = boxSize*largeur;
+        height = boxSize*hauteur;
+        Base<Point> b = new Base<Point>(300,300,300,"Base1", c, new Point(0,0));
+        Base<Point> b2 = new Base<Point>(300,300,300,"Base2", c, new Point(largeur-1, hauteur-1));
+        bases.add(b);
+        bases.add(b2);
         loadSprites();
-        width = boxSize*carte.getLargeur();
-        height = boxSize*carte.getHauteur();
+
         window = new JFrame();
         canvas = new MyCanvas(carte);
         canvas.setPreferredSize(new Dimension(width, height));
@@ -69,9 +73,10 @@ public class GridOfSprites extends JFrame implements ActionListener{
 
     private void loadSprites() {
         try {
-            sprites = new BufferedImage[2];
+            sprites = new BufferedImage[3];
             sprites[0] = ImageIO.read(new File("/Users/sylvainchen/git/test-github/empire/src/main/resources/grass.jpg"));
             sprites[1] = ImageIO.read(new File("/Users/sylvainchen/git/test-github/empire/src/main/resources/Bricks.jpg"));
+            sprites[2] = ImageIO.read(new File("/Users/sylvainchen/git/test-github/empire/src/main/resources/tower3.jpg"));
         } catch (IOException ex) {
             Logger.getLogger(GridOfSprites.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -109,12 +114,17 @@ public class GridOfSprites extends JFrame implements ActionListener{
 
         private void drawSprites(Graphics g) {
             Map<Point, Case> map = carte.getMap();
+
             for(Point p : carte.getPoints()) {
                 Case c = map.get(p);
                 if(c.estObstacle())
                     g.drawImage(sprites[1], boxSize * (int)p.getY(), boxSize * (int)p.getX(), null);
-                //else
-                //   g.drawImage(sprites[0], boxSize * (int)p.getY(), boxSize * (int)p.getX(), null);
+            }
+
+            for(Base<Point> b : bases) {
+                int x = (int)b.getIndex().getX();
+                int y = (int)b.getIndex().getY();
+                g.drawImage(sprites[2], boxSize * x, boxSize * y, null);
             }
             //g.drawImage(sprites[0], boxSize * 5, boxSize * 3, null);
             //g.drawImage(sprites[1], boxSize * 2, boxSize * 1, null);
