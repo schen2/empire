@@ -261,9 +261,7 @@ public class Base extends Agent  {
         final int width = carte.getLargeur();
         final int height = carte.getHauteur();
         final AEtoile<Point> astart = new AEtoile<Point>(successorComputer, fabriqueNoeud);
-        System.out.println("test1");
         final List<Point> result = astart.compute(new Point(0,0), new Point(width-1,height-1));
-        System.out.println("test2");
         //On intégre le résultat dans la matrice de base, et on l'affiche
         String [][] matrix = new String[height][width];
         for(final Point point : result) {

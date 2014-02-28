@@ -28,6 +28,7 @@ public class Carte {
     private int hauteur;
     private int largeur;
     private Map<Point, Case> map = new HashMap<Point, Case>();
+    private HashSet<Point> points = new HashSet<Point>();
     // private HashSet<Case> cases;
     // private HashSet<Arete> aretes;
 
@@ -40,14 +41,13 @@ public class Carte {
      */
     public Carte(String[][] matrix) {
         // Start of user code for constructor Carte
-        hauteur = matrix[0].length;
-        largeur = matrix.length;
-
-        for(int i=0; i<largeur; i++)
-            for(int j=0; j<hauteur; j++) {
+        largeur = matrix[0].length;
+        hauteur = matrix.length;
+        for(int i=0; i<hauteur; i++)
+            for(int j=0; j<largeur; j++) {
                 Point p = new Point(i,j);
+                points.add(p);
                 Case<Point> c = null;
-                System.out.println("i : " + i + ", j : " + j);
                 if(" ".equals(matrix[i][j]))
                     c = new Case(p, false);
                 else
@@ -59,6 +59,14 @@ public class Carte {
 
     public Case getCase(Unite unite) {
         return null;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public HashSet<Point> getPoints() {
+        return points;
     }
 
     /**
