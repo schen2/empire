@@ -11,9 +11,11 @@ package environment;
  
 import agents.Unite;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+
 
 // End of user code
 
@@ -25,8 +27,7 @@ import java.util.Map;
 public class Carte {
     private int hauteur;
     private int largeur;
-    private HashSet<Position> positions;
-    private Map map = new HashMap();
+    private Map<Point, Case> map = new HashMap<Point, Case>();
     // private HashSet<Case> cases;
     // private HashSet<Arete> aretes;
 
@@ -37,18 +38,20 @@ public class Carte {
     /**
      * Constructor.
      */
-    public Carte() {
+    public Carte(String[][] matrix) {
         // Start of user code for constructor Carte
-        super();
-        hauteur = 10;
-        largeur = 10;
-        map = new HashMap();
-        positions = new HashSet<Position>();
-        for(int i=0; i<largeur; ++i)
-            for(int j=0; j<hauteur; ++j) {
-                Position p = new Position(i,j);
-                positions.add(p);
-                Case c = new Case();
+        hauteur = matrix[0].length;
+        largeur = matrix.length;
+
+        for(int i=0; i<largeur; i++)
+            for(int j=0; j<hauteur; j++) {
+                Point p = new Point(i,j);
+                Case<Point> c = null;
+                System.out.println("i : " + i + ", j : " + j);
+                if(" ".equals(matrix[i][j]))
+                    c = new Case(p, false);
+                else
+                    c = new Case(p, true);
                 map.put(p,c);
             }
         // End of user code
@@ -74,6 +77,13 @@ public class Carte {
         return largeur;
     }
 
+    /**
+     * Return largeur.
+     * @return largeur
+     */
+    public Case<Point> getCase(Point p) {
+        return map.get(p);
+    }
 
 
 

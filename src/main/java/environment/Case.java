@@ -21,32 +21,30 @@ import java.util.HashSet;
  *
  */
 
-public class Case {
+public class Case<T>{
 
     // Start of user code to add fields for Case
-    final private int capacite = 1;
+    private final int capacite = 1;
     private Ressource ressource;
     private boolean obstacle;
-    private boolean libre;
+    //private boolean libre;
     private HashSet<Unite> unites;
     // End of user code
 
     /**
      * Constructor.
      */
-    public Case() {
-        // Start of user code for constructor Case
-        super();
+    public Case(final T index, final boolean obstacleBoolean) {
+        this.obstacle = obstacleBoolean;
         unites = new HashSet<Unite>();
-        // End of user code
     }
 
     public boolean estLibre() {
-        return ressource != null && unites.size() < capacite;
+        return !obstacle && unites.size() < capacite;
     }
 
     public boolean estObstacle() {
-        return ressource == null;
+        return obstacle;
     }
 
     public void ajouterUnite(Unite unite) {
@@ -64,10 +62,6 @@ public class Case {
     public int compte() {
         return unites.size();
     }
-
-
-
-
 
     // Start of user code to add methods for Case
 
