@@ -29,14 +29,20 @@ public class Case<T>{
     private boolean obstacle;
     //private boolean libre;
     private HashSet<Unite> unites;
+    private T index;
     // End of user code
 
     /**
      * Constructor.
      */
     public Case(final T index, final boolean obstacleBoolean) {
+        this.index = index;
         this.obstacle = obstacleBoolean;
         unites = new HashSet<Unite>();
+    }
+
+    public T getIndex() {
+        return index;
     }
 
     public boolean estLibre() {
